@@ -24,7 +24,7 @@ O estudo foi dividido em duas fases principais:
 
 ## Contribuição Multidisciplinar
 
-Este trabalho destaca a natureza **multifacetada da felicidade** e a abrangência do tema. Ele demonstra a importância de abordagens **multidisciplinares** para compreender algo tão complexo quanto a **mente do ser humano**.
+Este trabalho destaca a natureza **multifacetada da felicidade** e a abrangência do tema, demonstrando a importância de abordagens **multidisciplinares** para compreender algo tão complexo quanto a **mente do ser humano**.
 
 ## Tecnologias Utilizadas
 
