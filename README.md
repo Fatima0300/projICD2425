@@ -1,4 +1,4 @@
-# projICD2425
+# Projeto ICD 2024/2025
  
 # Análise dos Fatores Determinantes da Felicidade e Bem-Estar Emocional
 
@@ -48,14 +48,6 @@ Para garantir a reprodutibilidade e facilitar a execução do projeto, siga as i
 
 4. **Dashboard**:
    - O dashboard interativo pode ser executado localmente para explorar os resultados de forma dinâmica.
-
-## Licença
-
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Agradecimentos
-
-Agradecemos aos desenvolvedores das ferramentas e softwares utilizados neste projeto, bem como aos pesquisadores cujos trabalhos foram analisados e utilizados na construção deste estudo.
 
 ---
 
