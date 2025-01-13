@@ -13,7 +13,7 @@ O estudo foi dividido em duas fases principais:
    - Realizou-se uma análise bibliométrica utilizando a linguagem **Python** e os outputs do software **VOSviewer**.
 
 2. **Processamento de Linguagem Natural (PLN) e Modelação**:
-   - Foram aplicadas técnicas de **Processamento de Linguagem Natural** (PLN) para analisar o conteúdo dos artigos.
+   - Foram aplicadas técnicas de **Processamento de Linguagem Natural** (NLP) para analisar o conteúdo dos artigos.
    - O objetivo foi identificar os fatores-chave que influenciam a felicidade dos indivíduos.
 
 ## Resultados Interativos
