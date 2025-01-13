@@ -52,7 +52,7 @@ if menu == "Introdução":
     Para visualizar os resultados, selecione a página desejada no menu lateral.
     """)
     st.markdown("""
-    Para mais informações sobre o projeto, acesse o [repositório no GitHub](https://github.com/luizfrra/nlp_sentiment_analysis).
+    Para mais informações sobre o projeto, acesse o [repositório no GitHub](https://github.com/Fatima0300/projICD2425.git).
     """)
 
 # Página de Análise Bibliométrica
