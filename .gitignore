@@ -162,5 +162,5 @@ cython_debug/
 # Ignorar a pasta 'data' que contém dados
 data/
 
-.gitattributes/
+.gitattributes
 

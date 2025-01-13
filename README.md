@@ -51,5 +51,6 @@ Para garantir a reprodutibilidade e facilitar a execução do projeto, siga as i
 
 ---
 
-**Nota**: Para mais detalhes sobre a metodologia e análise, consulte os notebooks Jupyter e o código-fonte do projeto.
+## Autores: Catarina Fernandes, Fátima Rbaibi, Isabela Alves 
+
 
