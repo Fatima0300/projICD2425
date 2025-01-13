@@ -32,7 +32,7 @@ st.set_page_config(
 )
 
 # Título principal
-st.title("Projeto Natural Language Processing")
+st.title("Projeto Natural Language Processing - Fatores Determinantes da Felicidade e Bem-Estar Emocional")
 
 # Menu lateral para navegação entre páginas
 menu = st.sidebar.selectbox(
@@ -425,8 +425,8 @@ elif menu == "Modelação de Tópicos":
     # Criar Dicionário e Corpus
     dictionary = corpora.Dictionary(scopus_normalizado['Abstract_tokenized'])
     corpus = [dictionary.doc2bow(text) for text in scopus_normalizado['Abstract_tokenized']]
-    
-    # Definir o modelo LDA
+
+    # Rodar o modelo LDA
     lda_model = LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15, random_state=42, alpha='auto', per_word_topics=True)
 
     # Visualização do modelo LDA com PyLDAvis
@@ -455,21 +455,60 @@ elif menu == "Modelação de Tópicos":
         0: "Este tópico está relacionado com questões psicológicas, sociais e de saúde que afetam o bem estar-emocional e a qualidade de vida dos indivíduos, abordando aspetos como a idade, estado civil, stress e relacionamentos, além de temas mais delicados como discriminação, abuso e questões no ambiente de trabalho.",
         1: "Este tópico está relacionado com questões de saúde mental e bem-estar emocional, especialmente no contexto de ansiedade, depressão e stress, destacando a experiência de jovens e o impacto destes fatores na sua vida. Além disso, aborda a importância da saúde mental e do apoio psicológico.",
         2: "Este tópico está relacionado com os desafios que surgem na interseção entre a vida profissional, familiar e pessoal, abordando questões como o impacto do trabalho no bem-estar e nas responsabilidades familiares. O tópico também explora o conflito entre o trabalho e a família, e como esse conflito pode afetar o equilíbrio entre vida profissional e pessoal.",
-        3: "Este tópico está relacionado com o desenvolvimento pessoa e académico, explorando a interação entre o ambiente escolar e a personalidade dos indivíduos, bem como o impacto da educação e do ambiente escolar no bem-estar emocional e na qualidade de vida. Além disso, aborda a importância do apoio social e emocional no contexto educativo.",
+        3: "Este tópico está relacionado com o desenvolvimento pessoal e académico, explorando a interação entre o ambiente escolar e a personalidade dos indivíduos, bem como o impacto da educação e do ambiente escolar no bem-estar emocional e na qualidade de vida. Além disso, aborda a importância do apoio social e emocional no contexto educativo.",
         4: "Este tópico está centrado nas experiências de adolescentes no contexto educacional e social, abordando o impacto da escola no seu desenvolvimento e levando em conta aspectos como rendimento e religião, que podem influenciar as suas decisões e atitudes. O tópico também examina como as expectativas e resultados preditos sobre o futuro académico e profissional, como a universidade, se relacionam com a motivação dos adolescentes para alcançar os seus objetivos."
     }
-    # Iterar pelos tópicos e exibir as palavras-chave
-    for i, topic in topics:
-        #st.markdown(f"**Tópico {i+1}:**")
-        st.markdown(f"""
-        <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
-            <h3 style="color: #478185;">Tópico {i+1}:</h3>
-        </div>
-        """, unsafe_allow_html=True)
-        words = [word[0] for word in topic]
-        st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
-        st.markdown(f"**Descrição:** {descriptions[i]}")
-        st.markdown("---")
+
+    #st.markdown(f"**Tópico {i+1}:**")
+    st.markdown(f"""
+    <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
+        <h3 style="color: #478185;">Tópico 1:</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    words = [word[0] for word in topics[0][1]]
+    st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
+    st.markdown(f"**Descrição:** {descriptions[0]}")
+    st.markdown("---")
+
+    st.markdown(f"""
+    <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
+        <h3 style="color: #478185;">Tópico 2:</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    words = [word[0] for word in topics[2][1]]
+    st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
+    st.markdown(f"**Descrição:** {descriptions[2]}")
+    st.markdown("---")
+
+    st.markdown(f"""
+    <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
+        <h3 style="color: #478185;">Tópico 3:</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    words = [word[0] for word in topics[4][1]]
+    st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
+    st.markdown(f"**Descrição:** {descriptions[4]}")
+    st.markdown("---")
+
+    st.markdown(f"""
+    <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
+        <h3 style="color: #478185;">Tópico 4:</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    words = [word[0] for word in topics[1][1]]
+    st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
+    st.markdown(f"**Descrição:** {descriptions[1]}")
+    st.markdown("---")
+
+    st.markdown(f"""
+    <div style="background-color: #DEF2F1; padding: 10px; border-radius: 5px;">
+        <h3 style="color: #478185;">Tópico 5:</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    words = [word[0] for word in topics[3][1]]
+    st.markdown(f" - **Palavras-Chave:** {', '.join(words)}")
+    st.markdown(f"**Descrição:** {descriptions[3]}")
+    st.markdown("---")
 
 # Página de Clusterização
 elif menu == "Clusterização":
@@ -519,23 +558,20 @@ elif menu == "Clusterização":
     )
 
     # **Heatmap da Média das Distribuições de Tópicos por Cluster**
-    st.subheader("Média das Distribuições de Tópicos por Cluster")
+    st.subheader("Heatmap de Distribuições Médias de Tópicos por Cluster")
 
     # Criar o heatmap
-    fig, ax = plt.subplots(figsize=(12, 8))
+    fig, ax = plt.subplots(figsize=(6, 4))
 
     # A linha abaixo garante que a escala do heatmap seja proporcional aos valores das distribuições
     sns.heatmap(topic_distributions_per_cluster_df, annot=True, cmap='coolwarm', ax=ax, cbar=True)
-
-    ax.set_title('Heatmap de Distribuições Médias de Tópicos por Cluster')
 
     st.pyplot(fig)
 
     # **Distribuição de Documentos por Cluster**
     st.subheader("Distribuição de Documentos por Cluster")
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(6, 4))
     scopus_normalizado['Cluster'].value_counts().sort_index().plot(kind='bar', ax=ax)
-    ax.set_title('Distribuição de Documentos por Cluster')
     ax.set_xlabel('Cluster')
     ax.set_ylabel('Número de Documentos')
 
@@ -573,11 +609,10 @@ elif menu == "Clusterização":
     reduced_features = pca.fit_transform(topic_matrix)
 
     # Plotar os clusters
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(6, 4))
     scatter = ax.scatter(reduced_features[:, 0], reduced_features[:, 1], c=scopus_normalizado['Cluster'], cmap='viridis')
     ax.set_xlabel('PCA 1')
     ax.set_ylabel('PCA 2')
-    ax.set_title('Visualização dos Clusters com PCA')
 
     # Adicionar uma legenda para os clusters
     legend1 = ax.legend(*scatter.legend_elements(), title="Clusters")
@@ -613,12 +648,13 @@ elif menu == "Análises Adicionais":
     def get_documents_by_topic(topic_id):
         return scopus_normalizado[scopus_normalizado['Dominant_Topic'] ==  topic_id][['Title', 'Dominant_Topic']]
     
+    st.markdown("### Tendência dos Tópicos aos Longo do Tempo")
+
     # Contar tópicos ao longo do tempo
     topic_trends = scopus_normalizado.groupby(['Year', 'Dominant_Topic']).size().unstack(fill_value=0)
-    topic_trends.plot(kind='line', figsize=(10, 6))
+    topic_trends.plot(kind='line', figsize=(12, 6))
     fig, ax = plt.subplots(figsize=(10, 6))
     topic_trends.plot(kind='line', ax=ax)
-    ax.set_title('Tendência dos Tópicos ao Longo do Tempo')
     ax.set_xlabel('Ano de Publicação')
     ax.set_ylabel('Número de Documentos')
     ax.legend(title='Tópicos')
@@ -659,7 +695,7 @@ elif menu == "Análises Adicionais":
     sentiment_counts = scopus_normalizado['Sentiment_Label'].value_counts()
 
     # Gráfico de barras dos sentimentos
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(10, 6))
     sentiment_counts.plot(kind='bar', color=['lightblue', 'lightpink', 'lightgreen'])
     plt.title('Número de Documentos por Sentimento')
     plt.xlabel('Sentimento')
@@ -668,4 +704,7 @@ elif menu == "Análises Adicionais":
         plt.text(i, count, str(count), ha='center', va='bottom')
     
     st.pyplot(plt)
+
+
+
 
