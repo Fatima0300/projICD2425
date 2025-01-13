@@ -12,7 +12,7 @@ O estudo foi dividido em duas fases principais:
    - Foram recolhidos artigos científicos do repositório **Scopus**.
    - Realizou-se uma análise bibliométrica utilizando a linguagem **Python** e os outputs do software **VOSviewer**.
 
-2. **Processamento de Linguagem Natural (PLN) e Modelação**:
+2. **Processamento de Linguagem Natural (NLP) e Modelação**:
    - Foram aplicadas técnicas de **Processamento de Linguagem Natural** (NLP) para analisar o conteúdo dos artigos.
    - O objetivo foi identificar os fatores-chave que influenciam a felicidade dos indivíduos.
 
@@ -30,7 +30,7 @@ Este trabalho destaca a natureza **multifacetada da felicidade** e a abrangênci
 
 - **Python**: Linguagem principal para análise de dados e bibliometria.
 - **VOSviewer**: Software utilizado para visualização e análise bibliométrica.
-- **Processamento de Linguagem Natural (PLN)**: Técnicas aplicadas para a análise de textos.
+- **Processamento de Linguagem Natural (NLP)**: Técnicas aplicadas para a análise de textos.
 - **Dashboard Interativo**: Desenvolvimento de uma interface interativa para visualização de resultados.
 
 ## Como Executar o Projeto
